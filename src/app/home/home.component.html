@@ -1,0 +1,25 @@
+<div class="container">
+  <h2 class="header">Text Formatter</h2>
+
+  <div class="content">
+    <!-- Left Side -->
+   <app-text-display
+  [inputText]="inputText"
+  [outputText]="outputText"
+  [fontSize]="fontSize"
+  (textChanged)="onTextChange($event)"
+  [isBold]="isBold"
+  [isItalic]="isItalic"
+  [isUnderline]="isUnderline"
+  >
+</app-text-display>
+
+<app-formatters
+  (actionClicked)="onFormatterAction($event)"
+  [wordCount]="wordCount"
+  [charCount]="charCount"
+></app-formatters>
+
+
+  </div>
+</div>

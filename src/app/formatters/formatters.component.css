@@ -1,0 +1,30 @@
+.right-box {
+  flex: 1;
+  background-color: #bdbdbd;
+  padding: 15px;
+}
+
+.count-box {
+  background-color: #9e9e9e;
+  padding: 10px;
+  margin-bottom: 15px;
+  color: white;
+}
+
+.button-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  margin-bottom: 15px;
+}
+
+button {
+  padding: 6px;
+  cursor: pointer;
+}
+
+.style-buttons {
+  display: flex;
+  justify-content: space-between;
+}
+    

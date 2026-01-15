@@ -1,0 +1,33 @@
+<div class="left-box">
+  <div class="section">
+    <label>Type Text :-</label>
+    <!-- <textarea [value]="inputText"
+    (input)="onTextChange($event.target.value)"
+    ></textarea> -->
+
+    <textarea
+  [value]="inputText"
+  (input)="onTextChange($event)">
+</textarea>
+
+
+  </div>
+
+  <div class="section">
+  <label>Output Text :-</label>
+
+ <div
+  class="output-box"
+  [style.fontSize.px]="fontSize"
+  [style.fontWeight]="isBold ? 'bold' : 'normal'"
+  [style.fontStyle]="isItalic ? 'italic' : 'normal'"
+  [style.textDecoration]="isUnderline ? 'underline' : 'none'">
+
+  {{ outputText || inputText }}
+
+</div>
+
+
+</div>
+
+</div>
