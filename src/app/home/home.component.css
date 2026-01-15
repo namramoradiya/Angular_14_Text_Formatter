@@ -1,0 +1,18 @@
+.container {
+  width: 90%;
+  margin: 20px auto;
+  background-color: #e0e0e0;
+  padding: 15px;
+}
+
+.header {
+  background-color: #cfcfcf;
+  padding: 10px;
+  font-weight: bold;
+}
+
+.content {
+  display: flex;
+  gap: 20px;
+  margin-top: 15px;
+}

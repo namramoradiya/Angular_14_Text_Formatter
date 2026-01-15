@@ -1,0 +1,25 @@
+<div class="right-box">
+  <div class="count-box">
+    <p>Word Count: {{wordCount}}</p>
+    <p>Char Count: {{charCount}}</p>
+  </div>
+
+  <div class="button-grid">
+    <button (click)="onAction(FormatterAction.Clear)">Clear All</button>
+    <button (click)="onAction(FormatterAction.RemoveWhitespace)">White-space Remove</button>
+    <!-- <button>Reverse All</button> -->
+    <button (click)="onAction(FormatterAction.Reverse)">Reverse All</button>
+
+    <button (click)="onAction(FormatterAction.RemoveSpecialChar)">Remove Special Char</button>
+    <button (click)="onAction(FormatterAction.RemoveStyle)">Remove styling</button>
+    <button (click)="onAction(FormatterAction.CapitalizeWord)">Capitalize Word</button>
+  </div>
+
+  <div class="style-buttons">
+    <button (click)="onAction(FormatterAction.Bold)">B</button>
+    <button (click)="onAction(FormatterAction.Italic)">I</button>
+    <button (click)="onAction(FormatterAction.Underline)">U</button>
+    <button (click)="onAction(FormatterAction.FontIncrease)">+</button>
+    <button (click)="onAction(FormatterAction.FontDecrease)">-</button>
+  </div>
+</div>
