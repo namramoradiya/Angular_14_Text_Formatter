@@ -16,7 +16,8 @@ import { TextDisplayComponent } from './text-display/text-display.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    
   ],
   providers: [],
   bootstrap: [AppComponent]
