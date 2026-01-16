@@ -1,4 +1,5 @@
-import { Component,Input,Output,EventEmitter } from '@angular/core';
+import { Component,Input,Output,EventEmitter, SimpleChanges } from '@angular/core';
+import { TextStyle } from '../models/text-style.model';
 // import {HomeComponent} from '../home/home.component';
 // import {FormattersComponent} from '../formatters/formatters.component'
 @Component({
@@ -11,10 +12,12 @@ export class TextDisplayComponent {
 
       @Input() inputText: string = '';
       @Input() outputText: string = '';
-      @Input() isBold: boolean = false;
-      @Input() isItalic: boolean = false;
-      @Input() isUnderline: boolean = false;
-      @Input() fontSize: number = 14;
+      // @Input() isBold: boolean = false;
+      // @Input() isItalic: boolean = false;
+      // @Input() isUnderline: boolean = false;
+      // @Input() fontSize: number = 14;
+
+      @Input() textStyle!: TextStyle;
 
       @Output() textChanged = new EventEmitter<string>();
 
@@ -22,6 +25,13 @@ export class TextDisplayComponent {
   //   this.textChanged.emit(value);
   // }
 
+  ngOnInit(){
+
+  }
+
+  ngOnChanges(changes:SimpleChanges){
+    changes
+  }
 
   onTextChange(event: Event): void {
   const textarea = event.target as HTMLTextAreaElement;

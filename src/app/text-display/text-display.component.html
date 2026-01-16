@@ -18,10 +18,10 @@
 
  <div
   class="output-box"
-  [style.fontSize.px]="fontSize"
-  [style.fontWeight]="isBold ? 'bold' : 'normal'"
-  [style.fontStyle]="isItalic ? 'italic' : 'normal'"
-  [style.textDecoration]="isUnderline ? 'underline' : 'none'">
+  [style.fontSize.px]="textStyle.fontSize"
+  [style.fontWeight]="textStyle.isBold ? 'bold' : 'normal'"
+  [style.fontStyle]="textStyle.isItalic ? 'italic' : 'normal'"
+  [style.textDecoration]="textStyle.isUnderline ? 'underline' : 'none'">
 
   {{ outputText || inputText }}
 

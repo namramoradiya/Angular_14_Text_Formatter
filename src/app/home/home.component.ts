@@ -1,6 +1,7 @@
 import { Component , Input } from '@angular/core';
 import {TextDisplayComponent} from '../text-display/text-display.component'
 import {FormattersComponent} from '../formatters/formatters.component'
+import { TextStyle } from '../models/text-style.model';
 @Component({
   selector: 'app-home',
   // imports: [FormattersComponent,TextDisplayComponent],
@@ -15,9 +16,11 @@ export class HomeComponent {
    charCount: number = 0;
    fontSize: number = 14;
 
-   isBold = false;
-   isItalic = false;
-   isUnderline = false;
+  //  isBold = false;
+  //  isItalic = false;
+  //  isUnderline = false;
+
+  textStyle:TextStyle = new TextStyle();
 
   reverseText() {
     this.outputText = this.inputText.split('').reverse().join('');
@@ -92,36 +95,36 @@ capitalizeWords()
 //   this.outputText = `<u>${text}</u>`;
 // }
 
-increaseFontSize() {
-  console.log("Increasing font size");
-  this.fontSize += 1;
-}
+// increaseFontSize() {
+//   console.log("Increasing font size");
+//   this.fontSize += 1;
+// }
 
-decreaseFontSize() {
-  console.log("Decreasing font size");
-  if (this.fontSize > 10) {   
-    this.fontSize -= 1;
-  }
-}
+// decreaseFontSize() {
+//   console.log("Decreasing font size");
+//   if (this.fontSize > 10) {   
+//     this.fontSize -= 1;
+//   }
+// }
 
-toggleBold() {
-  this.isBold = !this.isBold;
-}
+// toggleBold() {
+//   this.isBold = !this.isBold;
+// }
 
-toggleItalic() {
-  this.isItalic = !this.isItalic;
-}
+// toggleItalic() {
+//   this.isItalic = !this.isItalic;
+// }
 
-toggleUnderline() {
-  this.isUnderline = !this.isUnderline;
-}
+// toggleUnderline() {
+//   this.isUnderline = !this.isUnderline;
+// }
 
-removeTextStyles() {
-  this.isBold = false;
-  this.isItalic = false;
-  this.isUnderline = false;
-  this.fontSize = 14;
-}
+// removeTextStyles() {
+//   this.isBold = false;
+//   this.isItalic = false;
+//   this.isUnderline = false;
+//   this.fontSize = 14;
+// }
 
 onFormatterAction(action: string) {
   switch(action) {
@@ -141,22 +144,22 @@ onFormatterAction(action: string) {
       this.capitalizeWords();
       break;
     case 'BOLD':
-      this.toggleBold();
+      this.textStyle.toggleBold();
       break;
     case 'ITALIC':
-      this.toggleItalic();
+      this.textStyle.toggleItalic();
       break;
     case 'UNDERLINE':
-      this.toggleUnderline();
+      this.textStyle.toggleUnderline();
       break;
     case 'FONT_INCREASE':
-      this.increaseFontSize();
+      this.textStyle.increaseFontSize();
       break;
     case 'FONT_DECREASE':
-      this.decreaseFontSize();
+      this.textStyle.decreaseFontSize();
       break;
     case 'REMOVE_STYLE':
-      this.removeTextStyles();
+      this.textStyle.resetStyles();
       break;
     default:
       break;
