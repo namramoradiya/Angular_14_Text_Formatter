@@ -2,21 +2,20 @@
   <h2 class="header">Text Formatter</h2>
 
   <div class="content">
-    <!-- Left Side -->
-   <app-text-display
-  [inputText]="inputText"
-  [outputText]="outputText"
-  (textChanged)="onTextChange($event)"
-  [textStyle]="textStyle"
-  >
-</app-text-display>
 
-<app-formatters
-  (actionClicked)="onFormatterAction($event)"
-  [wordCount]="wordCount"
-  [charCount]="charCount"
-></app-formatters>
+    <app-text-display
+      [inputText]="inputText"
+      [outputText]="outputText"
+      (textChanged)="onTextChange($event)"
+      [textStyle]="textStyle">
+    </app-text-display>
 
+    <app-formatters
+      (actionClicked)="onFormatterAction($event)"
+      [wordCount]="wordCount"
+      [charCount]="charCount">
+    </app-formatters>
 
   </div>
 </div>
+
