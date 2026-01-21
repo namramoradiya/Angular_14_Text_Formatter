@@ -1,1 +1,15 @@
-<app-home></app-home>
+<ul class="nav-bar">
+  <li>
+    <a routerLink="" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">
+      Text Formatter
+    </a>
+  </li>
+
+  <li>
+    <a routerLink="API" routerLinkActive="active">
+      APIs
+    </a>
+  </li>
+</ul>
+
+<router-outlet></router-outlet>
