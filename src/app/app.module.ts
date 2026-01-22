@@ -7,6 +7,8 @@ import { HomeComponent } from './home/home.component';
 import { FormattersComponent } from './formatters/formatters.component';
 import { TextDisplayComponent } from './text-display/text-display.component';
 import { APIsComponent } from './apis/apis.component';
+import { HttpClientModule } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -18,7 +20,9 @@ import { APIsComponent } from './apis/apis.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
