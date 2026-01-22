@@ -9,25 +9,25 @@
 
       <div class="field">
         <label>User Id :-</label>
-        <input type="text" />
+        <input type="text" [(ngModel)]="userId" />
       </div>
 
       <div class="list-buttons">
-        <button>Comments</button>
-        <button>Albums</button>
-        <button>Photos</button>
-        <button>Todos</button>
+        <button (click)="fetchComments()">Comments</button>
+        <button (click)="fetchAlbums()">Albums</button>
+        <button (click)="fetchPhotos()">Photos</button>
+        <button (click)="fetchTodos()">Todos</button>
       </div>
 
       <div class="action-buttons">
-        <button class="dark-btn">Delete</button>
-        <button class="dark-btn">Update</button>
-        <button class="dark-btn">Create</button>
+        <button class="dark-btn" (click)="delete()">Delete</button>
+        <button class="dark-btn" (click)="update()">Update</button>
+        <button class="dark-btn" (click)="create()">Create</button>
       </div>
 
       <div class="field">
         <label>Input Body :-</label>
-        <input type="text" />
+        <input type="text" [(ngModel)]="inputBody" />
       </div>
 
     </div>
@@ -37,12 +37,31 @@
 
       <div class="error-box">
         <strong>Error Msg</strong>
+         <div>{{ errorMsg }}</div>
       </div>
 
-      <div class="response-box">
-        <strong>Response Data</strong>
-        <div class="response-content"></div>
-      </div>
+<div class="response-box">
+  <strong>Response Data</strong>
+
+  <div class="response-content">
+   <div *ngIf="isPhotoResponse; else normalResponse">
+
+  <div class="photo-grid">
+    <div class="photo-card" *ngFor="let photo of responseData">
+      <img [src]="photo.thumbnailUrl" alt="photo" />
+      <p>{{ photo.title }}</p>
+    </div>
+  </div>
+
+</div>
+
+<ng-template #normalResponse>
+  <pre>{{ responseData | json }}</pre>
+</ng-template>
+
+  </div>
+</div>
+
 
     </div>
 

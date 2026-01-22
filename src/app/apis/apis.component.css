@@ -93,5 +93,14 @@
   height: 200px;
   margin-top: 10px;
   overflow-y: auto;
+  overflow-x: auto;
   border: 1px solid #ccc;
+  padding: 8px;
 }
+
+.response-content pre {
+  margin: 0;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+}
+
